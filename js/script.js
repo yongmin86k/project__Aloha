@@ -137,10 +137,10 @@ products.forEach(res => {
     });
 
         // adjust Height
-        setTimeout(function(){
+        window.addEventListener('load', function(){
             var carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
             elem.children[0].style.height = carousel_cell + 'px';
-        }, 100);
+        });
 
 
 
