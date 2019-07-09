@@ -33,7 +33,6 @@ if ( isBrowser !== 'Firefox' &&
                     posY += (toY -  curY - nav_margin) / setTime;
                     window.scrollTo(0, curY + posY );
                 },curTime);
-                console.log(toY);
             }
         });
     }
@@ -141,7 +140,7 @@ products.forEach(res => {
         setTimeout(function(){
             var carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
             elem.children[0].style.height = carousel_cell + 'px';
-        }, 80);
+        }, 100);
 
 
 

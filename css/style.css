@@ -500,31 +500,6 @@ footer {
     .carousel-cell {
         width: 25%;
     }
-    /* .featured > .container {
-        padding: 1rem;
-    }
-        .featured > .container > .products > li {
-            flex: 1 0 25%;
-        }
-            .featured > .container > .products > li > * {
-                margin-bottom: 1rem;
-            }
-            .featured > .container > .products > li > .cat {
-                font-size: 0.8rem;
-            }
-            .featured > .container > .products > li > .product-name {
-                font-size: 1.625rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .featured > .container > .products > li > .price {
-                font-size: 1.2rem;
-            }
-        .featured > .container > .dots > li {
-            width: 0.6rem; height: 0.6rem;
-            margin-right: 0.6rem;
-        } */
 
     .updates > .container {
         max-width: 720px;
