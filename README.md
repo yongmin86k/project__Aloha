@@ -1,5 +1,5 @@
 # Aloha project
->This is the first project for the web dev programme at RED Academy, showcasing responsive web development using HTML, CSS, and Javascript.
+>This is the first project for the web dev program at RED Academy, showcasing responsive web development using HTML, CSS, and Javascript.
 
 ![Preview - Desktop](images/preview_desktop.png)
 
@@ -19,9 +19,11 @@
 ---
 &nbsp;
 ## Functions
-- [fx :: Smooth scrolling](#fx::smooth-scrolling)
-- [fx :: Loop the Featured Products (Most-Loved Products)](#fx-::-loop-the-featured-Products-(most-Loved-products))
-- [fx :: Check the email validatoin](#fx::check-the-email-validatoin)
+- [fx :: Smooth scrolling](#fx--smooth-scrolling)
+
+- [fx :: Loop the Featured Products (Most-Loved Products)](#fx--loop-the-featured-products-most-loved-products)
+
+- [fx :: Check the email validatoin](#fx--check-the-email-validatoin)
 
 &nbsp;
 
@@ -57,10 +59,7 @@
     </html>
     ```
     
-2. Initialize
-    &nbsp;
-
-    Having the following initialization in your Javascript file:
+2. Initialize - having the following initialization in your Javascript file :
     
     [ `script.js` ]
     ```
@@ -136,14 +135,9 @@
     - `p_name` : (default `null`) Defines the name of the product.
     
     - `price` : (default `0`) Defines the price of the product. It can be written in decimals.
-        &nbsp;
-
-        For example ::
-        | product_data.js || render to HTML |
-        |:-:|:-:|:-:|
-        |324|->|`$324.00`|
-        |0.99|->|`$0.99`|
-        |0.5|->|`$0.50`
+        - 324 -> `$324.00`
+        - 0.99 -> `$0.99`
+        - 0.5 -> `$0.50`
 3. Include Flickity.
     &nbsp;
 
@@ -170,6 +164,9 @@
         </html>
         ```
 4. Create the HTML carousel element and classes with [ `main-carousel products` ].
+    &nbsp;
+
+    [ `HTML` ]
     ```
     <div class="main-carousel products">
         <!-- Leave here for product_loop.js  -->
@@ -203,6 +200,9 @@
 &nbsp;
 ## *fx* :: Check the email validatoin
 1. Include following lines to your Javascript(`script.js`) file.
+    &nbsp;
+
+    [ `script.js` ]
     ```
     function validate_email(ele){
         let reg = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/g,
@@ -217,6 +217,9 @@
     }
     ```
 2. Create `HTML` elements as below and include the Javascript(`script.js`) file.
+    &nbsp;
+
+    [ `HTML` ]
     ```
     <form class="subscription">
 
