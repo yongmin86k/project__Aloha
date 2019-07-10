@@ -77,13 +77,13 @@ address {
 
 
 /* Custom CSS :: Mobile */
-header {
-    position: fixed;
-    width: 100%;
-    top: 0; left: 0;
-    background-color: white;
-    z-index: 100;
-}
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0; left: 0;
+        background-color: white;
+        z-index: 100;
+    }
 
 header.scrolled {
     background-color: rgba(0,0,0,0.6);
@@ -129,6 +129,7 @@ header > .menu {
     } 
     header > .menu > .logo { flex-direction: row; }
     header > .menu > .cart { flex-direction: row-reverse; }
+        /* Default style for the number of items in the cart */
         header > .menu > .cart > .cart_num {
             visibility: hidden;
             position: absolute;   
@@ -140,9 +141,11 @@ header > .menu {
             transform: scale(1);
             transition: transform 200ms ease;
         }
+        /* Click to Expand and shrink the number */
         header > .menu > .cart > .cart_num.shrink {
             transform: scale(1.5);
         }
+            /* Default style for the letter in the cart */
             header > .menu > .cart > .cart_num > p {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 0.625rem;
@@ -215,11 +218,11 @@ header > .menu {
     padding: 2.25rem 0;
 }
 .shop > ul {
-    height: 200vw;    
+    height: 200.8vw;    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 0.25rem;
+    grid-gap: 0.8vw;
 }
     .shop > ul > li {
         background-size: cover;
@@ -422,10 +425,10 @@ footer {
     }
 
     .shop > ul {
-        height: 50vw;
+        height: 49.5vw;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-gap: 1rem;
+        grid-gap: 1vw;
     }
         .shop > ul > li {
             font-size: 2rem;

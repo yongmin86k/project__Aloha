@@ -1,17 +1,17 @@
-// OPTION 1
-// set browsers to apply
-//
+/*  OPTION 1
+    set browsers to apply
+*/
 const browser = ['Safari', 'IE', 'unknown'];
 
-// OPTION 2
-// set scroll time
-//
+/*  OPTION 2
+    set scroll time
+*/
 const setTime = 250;
 
 
 // initiate Flickity
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
+let elem = document.querySelector('.main-carousel');
+let flkty = new Flickity( elem, {
     // options
     cellAlign: 'left',
     wrapAround: true,
@@ -20,14 +20,14 @@ var flkty = new Flickity( elem, {
 
 // adjust Height
 window.addEventListener('load', function(){
-    var carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
+    let carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
     elem.children[0].style.height = carousel_cell + 'px';
 });
 
 
-
 // Validation for Email
-function validate_email(ele){
+function validate_email(e, ele){
+    e.preventDefault();
     let reg = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/g,
         email = ele.previousElementSibling.value;
     if ( reg.test(email) ){
@@ -41,13 +41,13 @@ function validate_email(ele){
 
 
 // STRETCH GOALS :: Scroll and change bg for fixed nav
-if ( this.window.scrollY >= 1 ) {
+if ( window.window.scrollY >= 1 ) {
     document.getElementsByTagName('header')[0].classList.add("scrolled");
 } else {
     document.getElementsByTagName('header')[0].classList.remove("scrolled");
 }
 window.addEventListener('scroll', function(){
-    if ( this.window.scrollY >= 1 ) {
+    if ( window.window.scrollY >= 1 ) {
         document.getElementsByTagName('header')[0].classList.add("scrolled");
     } else {
         document.getElementsByTagName('header')[0].classList.remove("scrolled");

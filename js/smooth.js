@@ -1,5 +1,6 @@
-//--------------------------------------------
-// Detect the broswer
+/*--------------------------------------------
+Detect the broswer
+*/
 const isBrowser =
     (navigator.userAgent.indexOf('Opera') != -1 || navigator.userAgent.indexOf('OPR') != -1) ? 'Opera' :
         (navigator.userAgent.indexOf("Chrome") != -1) ? 'Chrome' :

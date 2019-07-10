@@ -23,7 +23,11 @@
 
 - [fx :: Loop the Featured Products (Most-Loved Products)](#fx--loop-the-featured-products-most-loved-products)
 
-- [fx :: Check the email validatoin](#fx--check-the-email-validatoin)
+- [fx :: Email validation](#fx--email-validation)
+
+- [fx :: Fixed header](#fx--fixed-header)
+
+- [fx :: Update cart icon](#fx--update-cart-icon)
 
 &nbsp;
 
@@ -33,12 +37,10 @@
 > Enable smooth scrolling with  [smooth.js](js/script.js) file.
 
 > Or for `Chrome`, `Firefox` and `Opera`, use CSS(`style.css`) for smooth scrolling.
-    &nbsp;
-
+```    
+html { scroll-behavior: smooth; }
+```
     
-    ```
-    html { scroll-behavior: smooth; }
-    ```
 
 ### - Getting Started
 
@@ -59,7 +61,7 @@
     </html>
     ```
     
-2. Initialize - having the following initialization in your Javascript file :
+2. Initialize - having the following initialization in your Javascript(`script.js`) file :
     
     [ `script.js` ]
     ```
@@ -68,7 +70,7 @@
     const setTime = 250; // milliseconds
     ```
     
-    Options
+    < Options >
         &nbsp;
 
     - Add more browsers
@@ -88,7 +90,7 @@
 ---
 &nbsp;
 ## *fx* :: Loop the Featured Products (Most-Loved Products)
-> Create `HTML` elements for product lists with [product_data.js](js/product_data.js) and [product_loop.js](js/product_loop.js) files.
+> Create `HTML` elements for products with [product_data.js](js/product_data.js) and [product_loop.js](js/product_loop.js) files.
 
 ### - Getting Started
 
@@ -103,7 +105,7 @@
     </body>
     </html>
     ```
-2. In your `product_data.js` file, you can **add || edit || remove** the product.
+2. In your `product_data.js` file, you can **add, edit or remove** the product.
     ```
     let products = [
     {
@@ -121,6 +123,7 @@
     ...
     ...
     ...
+    {
         p_img: 'images/stretch-knit-dress.jpg',
         category: 'dresses',
         p_name: 'Stretch Knit Dress',
@@ -138,10 +141,13 @@
         - 324 -> `$324.00`
         - 0.99 -> `$0.99`
         - 0.5 -> `$0.50`
-3. Include Flickity.
+3. Include `Flickity.js`.
     &nbsp;
 
-    - Include the Flickity `flickity.css`, `flickity.pkgd.min.js`, your CSS(`style.css`) and Javascript(`script.js`) files as below.
+    - Include the Flickity `flickity.css` and `flickity.pkgd.min.js` with your CSS(`style.css`) and Javascript(`script.js`) files as below.
+    &nbsp;
+    
+        [ `HTML` ]
         ```
         <head>
         ...
@@ -198,13 +204,14 @@
 
 ---
 &nbsp;
-## *fx* :: Check the email validatoin
+## *fx* :: Email validation
 1. Include following lines to your Javascript(`script.js`) file.
     &nbsp;
 
     [ `script.js` ]
     ```
-    function validate_email(ele){
+    function validate_email(e, ele){
+        e.preventDefault();
         let reg = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/g,
             email = ele.previousElementSibling.value;
         if ( reg.test(email) ){
@@ -216,7 +223,7 @@
         }    
     }
     ```
-2. Create `HTML` elements as below and include the Javascript(`script.js`) file.
+2. Create `HTML` elements and include the Javascript(`script.js`) file as below.
     &nbsp;
 
     [ `HTML` ]
@@ -225,7 +232,7 @@
 
         <input type="email" placeholder="Your Email">
 
-        <button onclick="validate_email(this)" type="button">
+        <button onclick="validate_email(this)" type="submit">
             Subscribe
         </button>
 
@@ -234,3 +241,174 @@
     ...
     <script src="script.js"></script>
     ```
+
+&nbsp;
+
+---
+&nbsp;
+## *fx* :: Fixed header
+1. Set styles for the header element when it is at the top. 
+    &nbsp;
+
+    CSS `position: fixed` will change the header fixed in same position.
+    &nbsp;
+
+    [ `HTML` ]
+    ```
+    <header>
+        <!-- your header content-->
+    </header>
+    ```
+    [ `CSS` ]
+    ```
+    header {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+    }
+    ```
+2. Add class and styles for the header is scrolled.
+    &nbsp;
+
+    [ `CSS` ]
+    ```
+    header.scrolled {
+        background-color: rgba(0,0,0,0.6);
+    }
+    ```
+3. Include following snippets in the Javascript(`script.js`) file to trigger `scroll` class when the window is scrolled and when it isn't at the top.
+    &nbsp;
+    
+    [ `script.js` ]
+    ```
+    if ( window.window.scrollY >= 1 ) {
+        document.getElementsByTagName('header')[0].classList.add("scrolled");
+    } else {
+        document.getElementsByTagName('header')[0].classList.remove("scrolled");
+    }
+    window.addEventListener('scroll', function(){
+        if ( window.window.scrollY >= 1 ) {
+            document.getElementsByTagName('header')[0].classList.add("scrolled");
+        } else {
+            document.getElementsByTagName('header')[0].classList.remove("scrolled");
+        }
+    });
+    ```
+
+&nbsp;
+
+---
+&nbsp;
+## *fx* :: Update cart icon
+1. In the `HTML` file, update the codes to show the number in the cart.
+    &nbsp;
+
+    [ `HTML` ]
+    ```
+    <div class="menu-element cart">
+        <img onclick="reset_cart()" class="hide-scrolled" src="images/cart-icon.svg" alt="cart-icon">
+        
+        <div class="cart_num">
+            <p></p> <!-- The number will be displayed inside the p element. >
+        </div>
+    </div>
+    ```
+2. Update `CSS` file as below. Class `shrink` will trigger when user clicks *Add to Cart* button.
+    &nbsp;
+
+    [ `css` ]
+    ```
+    header > .menu > .cart { position: relative; }
+        
+        /* Default style for the number of items in the cart */
+        header > .menu > .cart > .cart_num {
+                visibility: hidden;
+                position: absolute;   
+                top: -4px; right: -4px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: red;
+                transform: scale(1);
+                transition: transform 200ms ease;
+            }
+
+        /* Click to Expand and shrink the number */
+        header > .menu > .cart > .cart_num.shrink {
+            transform: scale(1.5);
+        }
+            /* Default style for the letter in the cart */
+            header > .menu > .cart > .cart_num > p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.625rem;
+                font-weight: 600;
+                color: white;
+                text-align: center;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                overflow: visible;
+            }
+    ```
+3. Add the `click` event to the button in `HTML` file and initiate the event with the following.
+    &nbsp;
+    
+    [ `HTML` ]
+    ```
+    <button onclick="on_addCart(this)">Add to Cart</button>
+    ```
+    > This is included in [fx :: Loop the Featured Products (Most-Loved Products)](#fx--loop-the-featured-products-most-loved-products)
+    
+    &nbsp;
+
+    [ `script.js` ]
+    ```
+    let num_cart = 0, items_in_cart = [],
+    product_id;
+    cart = document.getElementsByClassName('cart_num')[0];
+
+    // fx :: ADD A ITEM to CART
+    function on_addCart(ele){
+        // Add the item to the array
+        product_id = Number( ele.classList.value.replace('product_id_','') );
+        items_in_cart.push(product_id);
+
+        // Increase NUMBER in Navigation
+        num_cart++
+        cart.style.visibility = 'visible';
+        cart.children[0].innerHTML = num_cart;
+
+        // micro-interaction for the increasing number 
+        let transition_time = 150;
+        document.getElementsByClassName('cart_num')[0].classList.add('shrink');
+        document.getElementsByClassName('cart_num')[0].style.transitionDuration = transition_time+'ms';
+        setTimeout(function(){
+            document.getElementsByClassName('cart_num')[0].classList.remove('shrink');
+        }, transition_time);
+    }
+
+    // fx :: RESET ITEMS in CART
+    function reset_cart(){
+        // Reset the array
+        items_in_cart = [];
+
+        // Reset NUMBER in Navigation
+        num_cart = 0;
+        cart.style.visibility = 'hidden';
+        cart.children[0].innerHTML = num_cart;
+    }
+    ```
+
+&nbsp;
+
+---
+&nbsp;
+## License
+- Structural code is open-sourced under the [MIT license](/LICENSE.md). 
+&nbsp;
+
+- Learning materials content is copyright (c) 2019 RED Academy.
+
+<3
