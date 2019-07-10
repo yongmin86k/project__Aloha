@@ -1,7 +1,7 @@
 /* 
     CSS :: smooth scrolling 
-    - does not work in Internet Explorer, Edge or Safari
     - only works in Chrome, Firefox and Opera
+    - does not work in Internet Explorer, Edge or Safari
  */
  html {
     scroll-behavior: smooth;
