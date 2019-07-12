@@ -3,7 +3,7 @@
     - only works in Chrome, Firefox and Opera
     - does not work in Internet Explorer, Edge or Safari
  */
- html {
+html {
     scroll-behavior: smooth;
 }
 
@@ -197,8 +197,8 @@ header > .menu {
     margin-top: 110px;
     background: 
         var(--overlay),
-        url('/Aloha-Project/images/banner-girl.png') no-repeat center 3rem,
-        url('/Aloha-Project/images/flower-bkgd.jpg') repeat-x center fixed;
+        url('./../images/banner-girl.png') no-repeat center 3rem,
+        url('./../images/flower-bkgd.jpg') repeat-x center fixed;
     background-size: cover, contain, cover;
     color: white;
 }           
@@ -240,32 +240,32 @@ header > .menu {
     .shop > ul > li:nth-child(1){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/mens-category.jpg');
+            url('./../images/mens-category.jpg');
     }
     .shop > ul > li:nth-child(2){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/trends-category.jpg');
+            url('./../images/trends-category.jpg');
     }
     .shop > ul > li:nth-child(3){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/glasses-category.jpg');
+            url('./../images/glasses-category.jpg');
     }
     .shop > ul > li:nth-child(4){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/sale-category.jpg');
+            url('./../images/sale-category.jpg');
     }
     .shop > ul > li:nth-child(5){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/bags-category.jpg');
+            url('./../images/bags-category.jpg');
     }
     .shop > ul > li:nth-child(6){
         background-image: 
             var(--overlay),
-            url('/Aloha-Project/images/womens-category.jpg');
+            url('./../images/womens-category.jpg');
     }
     .shop > ul > li:first-child, 
     .shop > ul > li:last-child {
@@ -326,7 +326,7 @@ header > .menu {
     padding: 2rem 0;
     background: 
         var(--overlay),
-        url("/Aloha-Project/images/wave-bkgd.jpg") no-repeat center;
+        url("./../images/wave-bkgd.jpg") no-repeat center;
     background-size: cover;
     color: white;
     text-shadow: var(--text-shadow);

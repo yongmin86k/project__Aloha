@@ -8,7 +8,7 @@ const browser = ['Safari', 'IE', 'unknown'];
 */
 const setTime = 250;
 
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
 
     // initiate Flickity
     let elem = document.querySelector('.main-carousel');
@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // adjust Height
-    window.addEventListener('load', function(){
-        let carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
-        elem.children[0].style.height = carousel_cell + 'px';
-    });
-    
+    let carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
+    elem.children[0].style.height = carousel_cell + 'px';
 });
+// End of window load
+
 
 // Validation for Email
 function validate_email(e, ele){
