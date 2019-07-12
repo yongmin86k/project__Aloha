@@ -8,22 +8,24 @@ const browser = ['Safari', 'IE', 'unknown'];
 */
 const setTime = 250;
 
+document.addEventListener("DOMContentLoaded", function() {
 
-// initiate Flickity
-let elem = document.querySelector('.main-carousel');
-let flkty = new Flickity( elem, {
-    // options
-    cellAlign: 'left',
-    wrapAround: true,
-    autoPlay: 1000 * 5 // 5 seconds
+    // initiate Flickity
+    let elem = document.querySelector('.main-carousel');
+    let flkty = new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        wrapAround: true,
+        autoPlay: 1000 * 5 // 5 seconds
+    });
+
+    // adjust Height
+    window.addEventListener('load', function(){
+        let carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
+        elem.children[0].style.height = carousel_cell + 'px';
+    });
+    
 });
-
-// adjust Height
-window.addEventListener('load', function(){
-    let carousel_cell = document.querySelector('.carousel-cell').offsetHeight;
-    elem.children[0].style.height = carousel_cell + 'px';
-});
-
 
 // Validation for Email
 function validate_email(e, ele){

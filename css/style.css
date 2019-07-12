@@ -297,7 +297,7 @@ header > .menu {
                     text-transform: uppercase;
                 }
                 .carousel-cell > .cat {
-                    font-size: 0.5rem;
+                    font-size: 0.625rem;
                 }
                 .carousel-cell > .product-name {
                     color: var(--color-orange-brand);
