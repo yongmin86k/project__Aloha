@@ -278,6 +278,10 @@ header > .menu {
 .featured {
     padding: 2.5rem 0 2rem 0;
 }
+    .featured > .container {
+        max-width: 1500px;
+        padding: 1rem 0;
+    }
             .carousel-cell {
                 width: 100%;
                 padding: 1rem 0;

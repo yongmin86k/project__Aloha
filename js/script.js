@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // options
         cellAlign: 'left',
         wrapAround: true,
-        autoPlay: 1000 * 5 // 5 seconds
+        autoPlay: 1000 * 5, // 5 seconds
+        prevNextButtons: false
     });
 
     // adjust Height
