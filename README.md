@@ -73,11 +73,13 @@ html { scroll-behavior: smooth; }
     < Options >
         &nbsp;
 
-    - Add more browsers
-        |  |  |  |
-        |:-:|:-:|:-:|
-        | Opera = `'Opera'` | Chrome = `'Chrome'` | Safari = `'Safari'` |
-        | Firefox = `'Firefox'` | Internet Explorer = `'IE'` | Others = `'unknown'`|
+    - Set more browsers
+        - Opera = `'Opera'` *(Disable CSS first)*
+        - Chrome = `'Chrome'` *(Disable CSS first)*
+        - Safari = `'Safari'`
+        - Firefox = `'Firefox'` *(Disable CSS first)*
+        - Internet Explorer = `'IE'`
+        - Others = `'unknown'`
     
     - Change scroll time
 
